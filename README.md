@@ -1,1 +1,1 @@
-# Check out [My Homepage](www.hhao08.com) to learn more about me!
+# Check out [My Homepage](https://www.hhao08.com/) to learn more about me!
