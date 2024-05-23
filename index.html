@@ -18,21 +18,28 @@
             color: #fff;
             padding: 2em 0;
             text-align: center;
+            position: relative;
         }
         nav {
             background: #333;
             color: #fff;
             text-align: center;
             padding: 1em 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: #fff;
             margin: 0 1em;
             text-decoration: none;
-            transition: color 0.3s;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
         }
         nav a:hover {
-            color: #6C63FF;
+            background: #6C63FF;
+            transform: scale(1.1);
         }
         .container {
             width: 80%;
@@ -46,6 +53,10 @@
             padding: 2em;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .about-me:hover, .experience:hover, .education:hover, .skills:hover, .contact:hover {
+            transform: translateY(-10px);
         }
         .about-me img {
             border-radius: 50%;
@@ -87,6 +98,7 @@
 <header>
     <div class="container">
         <h1>Haitian Hao</h1>
+        <p>Software Engineer | Full Stack Developer | AI Enthusiast</p>
         <p>Software Engineer @Affinity</p>
     </div>
 </header>
@@ -104,7 +116,7 @@
 <section id="about" class="container about-me">
     <h2>About Me</h2>
     <img src="https://media.licdn.com/dms/image/D4E03AQFbD6MKBv9kYg/profile-displayphoto-shrink_400_400/0/1713135292163?e=1721865600&v=beta&t=eYWmHkWkMCLwq9njLV1dMfS9dK_64RoYJJLr2MsZlJ0" alt="Haitian Hao">
-    <p>Hi, I'm Haitian Hao, a dedicated Software Engineer currently working at Affinity Solutions in New York, NY. I specialize in developing highly functional and scalable software solutions, with a strong background in both front-end and back-end development. I have a Master's degree in Computer Engineering from New York University and a Bachelor's degree in Computer Science and Mathematics from the University of Maryland.</p>
+    <p>Hi, I'm Henry, a dedicated Software Engineer currently working at Affinity Solutions in New York, NY. I specialize in developing highly functional and scalable software solutions, with a strong background in both front-end and back-end development. I have a Master's degree in Computer Engineering from New York University and a Bachelor's degree in Computer Science and Mathematics from the University of Maryland.</p>
 </section>
 
 <section id="experience" class="container experience">
