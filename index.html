@@ -1,222 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Haitian Hao - Personal Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            line-height: 1.6;
-            background: #f4f4f4;
-        }
-        header {
-            background: linear-gradient(90deg, #6C63FF, #5A55A3);
-            color: #fff;
-            padding: 2em 0;
-            text-align: center;
-            position: relative;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+        background: #f4f4f4;
+      }
+      header {
+        background: linear-gradient(90deg, #6c63ff, #5a55a3);
+        color: #fff;
+        padding: 2em 0;
+        text-align: center;
+        position: relative;
+      }
+      nav {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1em 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0.5em 1em;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        transition: background 0.3s, transform 0.3s;
+      }
+      nav a:hover {
+        background: #6c63ff;
+        transform: scale(1.1);
+      }
+      .linkedin-button {
+        background: #0077b5;
+        color: #fff;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .linkedin-button:hover {
+        background: #005582;
+        transform: scale(1.1);
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 2em 0;
+      }
+      .about-me,
+      .experience,
+      .education,
+      .skills,
+      .contact {
+        margin-bottom: 3em;
+        background: #fff;
+        padding: 2em;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .about-me:hover,
+      .experience:hover,
+      .education:hover,
+      .skills:hover,
+      .contact:hover {
+        transform: translateY(-10px);
+      }
+      .about-me img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin: 0 auto 1em;
+      }
+      h2 {
+        text-align: center;
+        color: #6c63ff;
+        margin-bottom: 1em;
+      }
+      .experience h3,
+      .education h3,
+      .skills h3 {
+        border-bottom: 2px solid #6c63ff;
+        padding-bottom: 0.5em;
+      }
+      .card {
+        margin-bottom: 1.5em;
+      }
+      .card h4 {
+        margin: 0.5em 0;
+      }
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1em 0;
+      }
+      @media (max-width: 768px) {
+        .container {
+          width: 95%;
         }
         nav {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+          flex-direction: column;
         }
         nav a {
-            color: #fff;
-            margin: 0.5em 1em;
-            text-decoration: none;
-            padding: 0.5em 1em;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.3s;
+          margin: 0.5em 0;
         }
-        nav a:hover {
-            background: #6C63FF;
-            transform: scale(1.1);
-        }
-        .linkedin-button {
-            background: #0077B5;
-            color: #fff;
-            padding: 0.5em 1em;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s, transform 0.3s;
-        }
-        .linkedin-button:hover {
-            background: #005582;
-            transform: scale(1.1);
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            overflow: hidden;
-            padding: 2em 0;
-        }
-        .about-me, .experience, .education, .skills, .contact {
-            margin-bottom: 3em;
-            background: #fff;
-            padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .about-me:hover, .experience:hover, .education:hover, .skills:hover, .contact:hover {
-            transform: translateY(-10px);
+        .about-me,
+        .experience,
+        .education,
+        .skills,
+        .contact {
+          padding: 1em;
         }
         .about-me img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            display: block;
-            margin: 0 auto 1em;
+          width: 100px;
+          height: 100px;
         }
         h2 {
-            text-align: center;
-            color: #6C63FF;
-            margin-bottom: 1em;
+          font-size: 1.5em;
         }
-        .experience h3, .education h3, .skills h3 {
-            border-bottom: 2px solid #6C63FF;
-            padding-bottom: 0.5em;
-        }
-        .card {
-            margin-bottom: 1.5em;
-        }
-        .card h4 {
-            margin: 0.5em 0;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-            nav {
-                flex-direction: column;
-            }
-            nav a {
-                margin: 0.5em 0;
-            }
-            .about-me, .experience, .education, .skills, .contact {
-                padding: 1em;
-            }
-            .about-me img {
-                width: 100px;
-                height: 100px;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
-<header>
-    <div class="container">
+  </head>
+  <body>
+    <header>
+      <div class="container">
         <h1>Haitian Hao</h1>
         <h2>Software Engineer | Full Stack Developer | AI Enthusiast</h2>
-    </div>
-</header>
+      </div>
+    </header>
 
-<nav>
-    <div class="container">
+    <nav>
+      <div class="container">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <!-- <a href="#contact">Contact</a> -->
-        <a href="https://www.linkedin.com/in/haitian-h-101008197/" target="_blank" class="linkedin-button">LinkedIn</a>
-    </div>
-</nav>
+        <a
+          href="https://www.linkedin.com/in/haitian-h-101008197/"
+          target="_blank"
+          class="linkedin-button"
+          >LinkedIn</a
+        >
+      </div>
+    </nav>
 
-<section id="about" class="container about-me">
-    <h2>About Me</h2>
-    <img src="https://media.licdn.com/dms/image/v2/D4E03AQFbD6MKBv9kYg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1713135292163?e=1735776000&v=beta&t=K2IckxPemdyA_zTMu1MRct_Nin1Mqzk880y3y3i7q50" alt="Haitian Hao">
-    <p>Hi, I'm Henry (Haitian Hao), a dedicated Software Engineer currently working at Affinity Solutions in New York, NY. I specialize in developing highly functional and scalable software solutions, with a strong background in both front-end and back-end development. I have a Master's degree in Computer Engineering from New York University and a Bachelor's degree in Computer Science and Mathematics from the University of Maryland.</p>
-</section>
+    <section id="about" class="container about-me">
+      <h2>About Me</h2>
+      <img
+        src="https://media.licdn.com/dms/image/v2/D4E03AQFbD6MKBv9kYg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1713135292163?e=1735776000&v=beta&t=K2IckxPemdyA_zTMu1MRct_Nin1Mqzk880y3y3i7q50"
+        alt="Haitian Hao"
+      />
+      <p>
+        Hi, I'm Henry (Haitian Hao), a dedicated Software Engineer currently
+        working at Affinity Solutions in New York, NY. I contribute to both
+        front-end and back-end development for client-facing applications,
+        primarily working with the Symfony MVC framework. My responsibilities
+        include implementing UI enhancements and functionality updates for
+        financial institution clients, improving the user experience through
+        features like offer tiles, progress bars, and redemption widgets. On the
+        back end, I handle the extraction and processing of data from PostgreSQL
+        databases, following business logic to deliver actionable insights. I
+        focus on optimizing system performance and security, ensuring high
+        availability of applications and protection against vulnerabilities such
+        as SQL injection and XSS. In addition, I collaborate closely with
+        cross-functional teams to translate technical requirements into
+        functional features and participate in Agile ceremonies. With a strong
+        background in both front-end and back-end development, I hold a Master's
+        degree in Computer Engineering from New York University and a Bachelor's
+        degree in Computer Science and Mathematics from the University of
+        Maryland.
+      </p>
+    </section>
 
-<section id="experience" class="container experience">
-    <h2>Experience</h2>
-    <div class="card">
+    <section id="experience" class="container experience">
+      <h2>Experience</h2>
+      <div class="card">
         <h3>Software Engineer I | Affinity Solutions</h3>
         <p>New York, NY | 03/2024 – Present</p>
         <ul>
-            <li>Led the enhancement of a proprietary content-delivery MVC framework tailored to the specific needs of two major clients, significantly improving administrative control and optimizing end-user experiences.</li>
-            <li>Developed and maintained responsive, user-friendly interfaces using PHP, HTML, JavaScript, and CSS, adhering to high-quality design principles and optimizing front-end performance.</li>
-            <li>Acted as a Full-Stack Engineer, implementing and maintaining features from PostgreSQL database interactions to dynamic front-end functionalities, ensuring high-quality delivery and seamless user interactions.</li>
-            <li>Engaged in the full development lifecycle within a ticket-based workflow, handling feature additions, bug fixes, and deploying robust solutions in collaboration with QA teams and product managers.</li>
-            <li>Proficient in using JIRA, Confluence, and Bitbucket for project management, version control, and documentation, ensuring meticulous tracking and timely updates on all project fronts.</li>
-        </ul>        
-    </div>
-    <div class="card">
+          <li>
+            Contribute to front-end and back-end development for applications
+            supporting financial institution clients, focusing on UI
+            enhancements and system functionality.
+          </li>
+          <li>
+            Develop and maintain responsive, user-friendly interfaces using PHP,
+            HTML, JavaScript, and CSS, adhering to high-quality design
+            principles and optimizing front-end performance.
+          </li>
+          <li>
+            Extract and process data from PostgreSQL databases, implementing
+            business logic to deliver insights and improve client-specific
+            features.
+          </li>
+          <li>
+            Apply secure coding practices to safeguard against vulnerabilities
+            such as SQL injection and XSS.
+          </li>
+          <li>
+            Optimize system performance and troubleshoot issues to maintain high
+            availability of services.
+          </li>
+          <li>
+            Engage in the full development lifecycle within a ticket-based
+            workflow, handling feature additions, bug fixes, and deploying
+            robust solutions in collaboration with QA teams and product
+            managers.
+          </li>
+          <li>
+            Actively participate in Agile development, contributing to sprint
+            planning, stand-ups, and retrospectives.
+          </li>
+          <li>
+            Proficient in using JIRA, Confluence, and Bitbucket for project
+            management, version control, and documentation, ensuring meticulous
+            tracking and timely updates on all project fronts.
+          </li>
+        </ul>
+      </div>
+      <div class="card">
         <h3>Back End Developer | Baanyan Software Services</h3>
         <p>New Jersey | 08/2023 – 03/2024</p>
         <ul>
-            <li>Led the integration of a sophisticated Inventory Management System (IMS) with an existing e-commerce platform, using Java Spring Boot for backend development, resulting in real-time inventory updates, enhancing customer experience and reducing the risk of overselling.</li>
-            <li>Developed APIs for seamless order fulfillment and shipping integration, ensuring efficient processing of e-commerce orders.</li>
-            <li>Worked closely with the frontend team, using React, to ensure seamless interaction between the e-commerce platform and the IMS, providing a cohesive user experience and supporting a significant increase in online sales efficiency.</li>
+          <li>
+            Led the integration of a sophisticated Inventory Management System
+            (IMS) with an existing e-commerce platform, using Java Spring Boot
+            for backend development, resulting in real-time inventory updates,
+            enhancing customer experience and reducing the risk of overselling.
+          </li>
+          <li>
+            Developed APIs for seamless order fulfillment and shipping
+            integration, ensuring efficient processing of e-commerce orders.
+          </li>
+          <li>
+            Worked closely with the frontend team, using React, to ensure
+            seamless interaction between the e-commerce platform and the IMS,
+            providing a cohesive user experience and supporting a significant
+            increase in online sales efficiency.
+          </li>
         </ul>
-    </div>
-    <div class="card">
+      </div>
+      <div class="card">
         <h3>Full Stack Software Engineer | Anbang Insurance Group</h3>
         <p>01/2023 - 08/2023</p>
         <ul>
-            <li>Designed and implemented innovative software solutions to streamline policy management and claims processing, enhancing operational efficiency by 30%.</li>
-            <li>Led the development of a robust customer portal with an intuitive interface, utilizing PHP for server-side logic and integrating RESTful API services for seamless data exchange.</li>
-            <li>Enhanced user experience by implementing a responsive front-end with React, and streamlined backend operations using Node.js and Express, supported by comprehensive REST API endpoints.</li>
-            <li>Deployed continuous integration/continuous deployment (CI/CD) pipelines to automate testing and deployment phases, accelerating product delivery by 40% and ensuring high code quality.</li>
+          <li>
+            Designed and implemented innovative software solutions to streamline
+            policy management and claims processing, enhancing operational
+            efficiency by 30%.
+          </li>
+          <li>
+            Led the development of a robust customer portal with an intuitive
+            interface, utilizing PHP for server-side logic and integrating
+            RESTful API services for seamless data exchange.
+          </li>
+          <li>
+            Enhanced user experience by implementing a responsive front-end with
+            React, and streamlined backend operations using Node.js and Express,
+            supported by comprehensive REST API endpoints.
+          </li>
+          <li>
+            Deployed continuous integration/continuous deployment (CI/CD)
+            pipelines to automate testing and deployment phases, accelerating
+            product delivery by 40% and ensuring high code quality.
+          </li>
         </ul>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section id="education" class="container education">
-    <h2>Education</h2>
-    <div class="card">
+    <section id="education" class="container education">
+      <h2>Education</h2>
+      <div class="card">
         <h3>New York University</h3>
         <p>Manhattan, NY | M.S. in Computer Engineering</p>
-        <p>Courses: Real-Time Embedded Systems, Advanced Machine Learning, Database Systems</p>
-    </div>
-    <div class="card">
+        <p>
+          Courses: Real-Time Embedded Systems, Advanced Machine Learning,
+          Database Systems
+        </p>
+      </div>
+      <div class="card">
         <h3>University of Maryland</h3>
         <p>College Park, MD | B.S. in Computer Science, B.S. in Mathematics</p>
-        <p>Dean's Honor List | Courses: Algorithms Analysis, Software Engineering, Advanced Data Structure, Deep Learning, Applied Linear Algebra</p>
-    </div>
-</section>
+        <p>
+          Dean's Honor List | Courses: Algorithms Analysis, Software
+          Engineering, Advanced Data Structure, Deep Learning, Applied Linear
+          Algebra
+        </p>
+      </div>
+    </section>
 
-<section id="skills" class="container skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>Programming: Proficient in Java, Python, JavaScript, C, C#, PHP, Go; familiar with Kotlin, Swift, SwiftUI, and OCaml.</li>
-        <li>Web Development: Advanced experience with Spring Boot, React, Django; working knowledge of Node.js with Express.</li>
-        <li>Cloud Computing: Skilled with Microsoft Azure, AWS services (EC2, S3, RDS, Lambda); understanding of IaaS, PaaS, SaaS.</li>
-        <li>Data Management & Analysis: Competent in data manipulation with SQL, MongoDB, Core Data; data visualization with Matplotlib, Seaborn; machine learning with Scikit-Learn, TensorFlow, PyTorch.</li>
-    </ul>
-</section>
+    <section id="skills" class="container skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>
+          Programming: Proficient in Java, Python, JavaScript, C, C#, PHP, Go;
+          familiar with Kotlin, Swift, SwiftUI, and OCaml.
+        </li>
+        <li>
+          Web Development: Advanced experience with Spring Boot, React, Django;
+          working knowledge of Node.js with Express.
+        </li>
+        <li>
+          Cloud Computing: Skilled with Microsoft Azure, AWS services (EC2, S3,
+          RDS, Lambda); understanding of IaaS, PaaS, SaaS.
+        </li>
+        <li>
+          Data Management & Analysis: Competent in data manipulation with SQL,
+          MongoDB, Core Data; data visualization with Matplotlib, Seaborn;
+          machine learning with Scikit-Learn, TensorFlow, PyTorch.
+        </li>
+      </ul>
+    </section>
 
-<!-- <section id="contact" class="container contact">
+    <!-- <section id="contact" class="container contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:hait.hhao@gmail.com">hait.hhao@gmail.com</a></p>
     <p>Website: <a href="http://hhao08.com">hhao08.com</a></p>
 </section> -->
 
-<footer>
-    <p>&copy; 2024 Haitian Hao. All rights reserved.</p>
-</footer>
-
-</body>
+    <footer>
+      <p>&copy; 2024 Haitian Hao. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
