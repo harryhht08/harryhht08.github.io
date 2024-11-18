@@ -111,6 +111,12 @@
         text-align: center;
         padding: 1em 0;
       }
+
+      /* Added CSS to fix the overlapping issue */
+      section {
+        scroll-margin-top: 80px; /* Adjust this value based on your nav height */
+      }
+
       @media (max-width: 768px) {
         .container {
           width: 95%;
@@ -337,13 +343,37 @@
     </section>
 
     <!-- <section id="contact" class="container contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:hait.hhao@gmail.com">hait.hhao@gmail.com</a></p>
-    <p>Website: <a href="http://hhao08.com">hhao08.com</a></p>
-</section> -->
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hait.hhao@gmail.com">hait.hhao@gmail.com</a></p>
+      <p>Website: <a href="http://hhao08.com">hhao08.com</a></p>
+    </section> -->
 
     <footer>
       <p>&copy; 2024 Haitian Hao. All rights reserved.</p>
     </footer>
+
+    <!-- Added JavaScript to adjust scrolling behavior -->
+    <script>
+      // Smooth scrolling adjustment for sticky nav bar
+      document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default anchor behavior
+          const targetId = this.getAttribute("href").slice(1); // Get the target id
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            const navHeight = document.querySelector("nav").offsetHeight; // Get the nav height
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - navHeight;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth", // Smooth scrolling
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
